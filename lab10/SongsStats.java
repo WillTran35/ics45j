@@ -3,6 +3,7 @@ import java.time.Year;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 public class SongsStats {
     /**
@@ -32,7 +33,8 @@ public class SongsStats {
      */
     public static String problem2_getTracksByArtist(Stream<Song> songs, String
             artist) {
-        return ""; // FIX ME
+        return songs.filter(song -> song.getArtist().equals(artist))
+                .map(Song::getTrack).sorted().collect(Collectors.joining(", ")); // FIX ME
     }
     /**
      * Returns the song with the fastest tempo in the stream. If more than one
