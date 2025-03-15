@@ -16,7 +16,7 @@ public class SongsStats {
      */
     public static long problem1_countArtists(Stream<Song> songs) {
 
-        return -1L; // FIX ME
+        return songs.map(Song::getArtist).distinct().count(); // FIX ME
     }
     /**
      * Given a Stream of Songs and an artist, returns a comma-separated string of
